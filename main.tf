@@ -26,7 +26,7 @@ resource "azurerm_resource_group" "rg_velero_development" {
 # Storage Accounts
 
 resource "azurerm_storage_account" "sa_velero_development" {
-  name                = "${var.prefix}velero${random_string.velero_storage_account.result}"
+  name                = "${lower("${var.prefix}velero${random_string.velero_storage_account.result}")}"
   location            = "${azurerm_resource_group.rg_velero_development.location}"
   resource_group_name = "${azurerm_resource_group.rg_velero_development.name}"
   account_tier = "Standard"
