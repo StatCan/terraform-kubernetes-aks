@@ -85,7 +85,7 @@ resource "azurerm_log_analytics_solution" "solution_aks_development" {
 # ACR
 
 resource "azurerm_container_registry" "acr" {
-  name                     = "${var.prefix}"
+  name                     = "${var.prefix}acr"
   resource_group_name      = "${azurerm_resource_group.rg_aks_development.name}"
   location                 = "${azurerm_resource_group.rg_aks_development.location}"
   sku                      = "Premium"
